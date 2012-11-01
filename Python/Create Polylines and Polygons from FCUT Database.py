@@ -10,8 +10,7 @@ polygonFile = outputFolder + "\\polygons.shp"		# Name of POLYGON output file
 env.overwriteOutput = True 							# Overwrite existing output files (if any)
 
 ## FCUT DATABASE INFORMATION
-dataSource = arcpy.GetParameterAsText(1)			# Path to FCUT Database
-
+dataSource = arcpy.GetParameterAsText(1)# Path to FCUT Database
 table = arcpy.SearchCursor(dataSource) 	# FCUT Database Cursor
 
 ## TEMPORARY FEATURE & DATA STORAGE
