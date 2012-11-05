@@ -1,22 +1,14 @@
-def archive():
-	"""
-	Create an archive of your MyModules script and push the working script to the main folder.
-	"""
-	import os
-	import time
-	import shutil
-	directory = r"C:\DATAMGT\Scripts\MyModules"
-	workingCopy = r"C:\DATAMGT\Scripts\MyModules\MyModules_WorkingCopy.py"
-	archiveTime = str(time.localtime()[2]) + str(time.localtime()[1]) + str(time.localtime()[0]) + "_" + str(time.localtime()[3]) + str(time.localtime()[4])
-	archive = (directory + os.sep + "Archive" + archiveTime + ".py")
-	MyModulesMain = r"C:\Python26\ArcGIS10.0\Lib\site-packages\MyModules.py"
-	shutil.copyfile(MyModulesMain, archive)
-	shutil.copyfile(workingCopy, MyModulesMain)
-	del directory
-	del workingCopy
-	del archiveTime
-	del archive
+def updateFile(oldFile, newFile, backupFileFolder,):
+	"""Full path to old file, Full path to new file, Full path to backup folder."""
 	
+	import os, time, shutil
+	
+	timestamp = str(time.localtime()[2]) + str(time.localtime()[1]) + str(time.localtime()[0]) + "_" + str(time.localtime()[3]) + str(time.localtime()[4]) # Backup timestamp
+	backupFile = backupFileFolder + os.sep + oldFile.split("\\")[-1].split(".")[0] + "_" + timestamp + ".py"	# Backup version file path
+
+	shutil.copyfile(oldFile, backupFile)	# Make a backup copy
+	shutil.copyfile(newFile, oldFile)		# Replace the old file with the new file
+
 def Checklist(directory):
 	"""
 	Create a checklist file in "txt" format for any folder - list all files by name.
