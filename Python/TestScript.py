@@ -1,6 +1,6 @@
 import arcpy, os
 
 def myfunction:
-	print "test.'
+	print "test"
 
 myfunction()
