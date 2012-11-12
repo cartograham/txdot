@@ -1,6 +1,7 @@
 import arcpy, os
 
-def myfunction:
+def myFunction:
 	print "test"
-
-myfunction()
+	print "test2"
+	
+myFunction()
