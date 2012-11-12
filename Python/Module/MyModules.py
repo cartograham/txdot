@@ -1,3 +1,6 @@
+def test():
+	print "test"
+	
 def updateFile(oldFile, newFile, backupFileFolder,):
 	"""Full path to old file, Full path to new file, Full path to backup folder."""
 	
